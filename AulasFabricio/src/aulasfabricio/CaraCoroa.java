@@ -1,16 +1,18 @@
+package aulasfabricio;
+
 /* Ex. 01: CaraCoroa.java
  * Dada duas entradas nos valores 0 (cara), 1 (coroa)  
  * sortear o resultado e mostrar o resultado
  * Entrada: jogada (int)
- * Saída:  ganhou ou perdeu
+ * Saï¿½da:  ganhou ou perdeu
  *
- * Autor: Fabrício Olivetti de França
- * Disciplina Processamento da Informação
+ * Autor: Fabrï¿½cio Olivetti de Franï¿½a
+ * Disciplina Processamento da Informaï¿½ï¿½o
  * Universidade Federal do ABC
  *
  *
- * Utilize a função Math.random() que retorna
- * um valor aleatório entre 0 e 1 para sortear
+ * Utilize a funÃ§Ã£o Math.random() que retorna
+ * um valor aleatÃ³rio entre 0 e 1 para sortear
  * o resultado.
  * Assuma valores menores que 0.5 como cara
  * e maiores ou igual como coroa.
@@ -32,22 +34,22 @@ class CaraCoroa{
                 {
                     if(jogada == 1)
                     { 
-                        System.out.println("O resultado foi cara! Você venceu!");
+                        System.out.println("O resultado foi cara! VocÃª venceu!");
                     }
                     else
                     {
-                        System.out.println("O resultado foi cara! você perdeu");
+                        System.out.println("O resultado foi cara! vocÃª perdeu");
                     }
                 }
                 else
                 {
                     if (jogada < .5)
                     {
-                        System.out.println("O resultado foi coroa, você venceu!");
+                        System.out.println("O resultado foi coroa, vocÃª venceu!");
                     }
                     else 
                     {
-                        System.out.println("O resultado foi coroa, você perdeu");
+                        System.out.println("O resultado foi coroa, vocÃª perdeu");
                     }
                 }
 	}
