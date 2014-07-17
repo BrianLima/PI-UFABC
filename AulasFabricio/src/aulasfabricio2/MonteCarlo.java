@@ -1,21 +1,23 @@
+package aulasfabricio2;
+
 /* EX. 04: MonteCarlo.java
- * Dado N, utilizar o método de
+ * Dado N, utilizar o mï¿½todo de
  * Monte Carlo para estimar o
  * valor de pi.
  * Entrada: N (int) 
- * Saída: pi 
+ * Saï¿½da: pi 
  *
- * Autor: Fabrício Olivetti de França
- * Disciplina Processamento da Informação
+ * Autor: Fabrï¿½cio Olivetti de Franï¿½a
+ * Disciplina Processamento da Informaï¿½ï¿½o
  * Universidade Federal do ABC
  *
  * Dicas:
- * Defina um círculo de raio 0.5 e centro 
+ * Defina um cï¿½rculo de raio 0.5 e centro 
  * (0.5, 0.5) para facilitar.
- * Use Math.random() para gerar um ponto aleatório.
+ * Use Math.random() para gerar um ponto aleatï¿½rio.
  *
- * Para qual valor de N obtém o valor correto
- * de pi até a 4a. casa decimal?
+ * Para qual valor de N obtï¿½m o valor correto
+ * de pi atï¿½ a 4a. casa decimal?
  */
 
 import java.util.Scanner;

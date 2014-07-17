@@ -23,18 +23,22 @@
 
 import java.util.Scanner;
 
-class MonteCarlo{
-	public static void main(String[] args) {
-    Scanner leitor = new Scanner(System.in);
-    double precisao;
-    double pi=0;
-    double x,y;
-    double raioquadrado = 0.5*0.5;
-    int alvo = 0;
-    precisao = leitor.nextDouble();
-    int N = 0;
+class MonteCarlo {
 
-
-  }
+    public static void main(String[] args) {
+        Scanner leitor = new Scanner(System.in);
+        double precisao;
+        double pi = 0;
+        double x, y;
+        double raioquadrado = 0.5 * 0.5;
+        int alvo = 0;
+        System.out.println("Digite a precisão");
+        precisao = leitor.nextDouble();
+        
+        pi = Math.PI;
+        double N = Math.round(pi);
+        
+        
+        
+    }
 }
-
