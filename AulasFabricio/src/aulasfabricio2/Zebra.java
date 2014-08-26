@@ -25,7 +25,7 @@ class Zebra {
     // vamos buscar o �ndice que encontramos a string x na lista
     public static int buscaLista(String[] Lista, String x) {
         for (int i = 0; i < Lista.length; i++) {
-            if (Lista[i] == x) {
+            if (Lista[i].equals(x)) {
                 return i;
             }
         }
@@ -34,79 +34,85 @@ class Zebra {
 
     // modela todas as dicas que temos em forma de condi��es/restri��es
     public static boolean Possivel(int num, int cor, int bebida, int comida, int animal) {
-        if (buscaLista(Nacionalidade, "PERUANO") != buscaLista(Casa, "UM")) // se a Nacionalidade eh Peruana e a casa nao eh a primeira, entao quebrou a premissa
-        {
-            return false;
-        } else if (buscaLista(Nacionalidade, "PERUANO") == buscaLista(Casa, "UM")) {
-            return true;
-        }
-        if (buscaLista(Nacionalidade, "BRASILEIRO") != buscaLista(Cor, "VERMELHO")) {
-            return false;
-        } else if (buscaLista(Nacionalidade, "BRASILEIRO") == buscaLista(Cor, "VERMELHO")) {
-            return true;
-        }
-        if (buscaLista(Nacionalidade, "ARGENTINO") != buscaLista(Animal, "CACHORRO")) {
-            return false;
-        } else if (buscaLista(Nacionalidade, "ARGENTINO") == buscaLista(Animal, "CACHORRO")) {
-            return true;
-        }
-        if (buscaLista(Nacionalidade, "CHILENO") != buscaLista(Bebida, "CHA")) {
-            return false;
-        } else if (buscaLista(Nacionalidade, "CHILENO") == buscaLista(Bebida, "CHA")) {
-            return true;
-        }
-        if (buscaLista(Cor, "VERDE") != buscaLista(Bebida, "CAFE")) {
-            return false;
-        } else if (buscaLista(Cor, "VERDE") == buscaLista(Bebida, "CAFE")) {
-            return true;
-        }
-        if (buscaLista(Comida, "PIZZA") != buscaLista(Animal, "PASSARO")) {
-            return false;
-        } else if (buscaLista(Comida, "PIZZA") == buscaLista(Animal, "PASSARO")) {
-            return true;
-        }
-        if (buscaLista(Cor, "BRANCA") - buscaLista(Cor, "VERDE") == 1) {
-            return true;
-        } else if (buscaLista(Cor, "BRANCA") - buscaLista(Cor, "VERDE") != 1) {
+        //Somente o morador da casa verde toma café
+        if (buscaLista(Cor,"VERDE") == cor && buscaLista(Bebida, "CAFE") != bebida) {
             return false;
         }
-
-        if (buscaLista(Comida, "FRUTA") != buscaLista(Cor, "AMARELO")) {
-            return false;
-        } else if (buscaLista(Comida, "FRUTA") == buscaLista(Cor, "AMARELO")) {
-            return true;
-        }
-
-        if (Math.abs(buscaLista(Comida, "CARNE") - buscaLista(Animal, "GATO")) == 1) {
-            return true;
-        } else if (Math.abs(buscaLista(Comida, "CARNE") - buscaLista(Animal, "GATO")) != 1) {
-            return false;
-        }
-
-        if (Math.abs(buscaLista(Animal, "CAVALO") - buscaLista(Comida, "FRUTA")) == 1) {
-            return true;
-        } else if (Math.abs(buscaLista(Animal, "CAVALO") - buscaLista(Comida, "FRUTA")) != 1) {
-            return false;
-        }
-
-        if (buscaLista(Comida, "LEGUMES") != buscaLista(Bebida, "CERVEJA")) {
-            return false;
-        } else if (buscaLista(Comida, "LEGUMES") == buscaLista(Bebida, "CERVEJA")) {
-            return true;
-        }
-
-        if (buscaLista(Nacionalidade, "CUBANO") != buscaLista(Comida, "DOCES")) {
-            return false;
-        } else if (buscaLista(Nacionalidade, "CUBANO") == buscaLista(Comida, "DOCES")) {
-            return true;
-        }
-
-        if (Math.abs(buscaLista(Nacionalidade, "PERUANO") - buscaLista(Cor, "AZUL")) == 1) {
-            return true;
-        } else if (Math.abs(buscaLista(Nacionalidade, "PERUANO") - buscaLista(Cor, "AZUL")) != 1) {
-            return false;
-        }
+        //Todos os outros são possíveis
         return true;
+//        if (buscaLista(Nacionalidade, "PERUANO") != buscaLista(Casa, "UM")) // se a Nacionalidade eh Peruana e a casa nao eh a primeira, entao quebrou a premissa
+//        {
+//            return false;
+//        } else if (buscaLista(Nacionalidade, "PERUANO") == buscaLista(Casa, "UM")) {
+//            return true;
+//        }
+//        if (buscaLista(Nacionalidade, "BRASILEIRO") != buscaLista(Cor, "VERMELHO")) {
+//            return false;
+//        } else if (buscaLista(Nacionalidade, "BRASILEIRO") == buscaLista(Cor, "VERMELHO")) {
+//            return true;
+//        }
+//        if (buscaLista(Nacionalidade, "ARGENTINO") != buscaLista(Animal, "CACHORRO")) {
+//            return false;
+//        } else if (buscaLista(Nacionalidade, "ARGENTINO") == buscaLista(Animal, "CACHORRO")) {
+//            return true;
+//        }
+//        if (buscaLista(Nacionalidade, "CHILENO") != buscaLista(Bebida, "CHA")) {
+//            return false;
+//        } else if (buscaLista(Nacionalidade, "CHILENO") == buscaLista(Bebida, "CHA")) {
+//            return true;
+//        }
+//        if (buscaLista(Cor, "VERDE") != buscaLista(Bebida, "CAFE")) {
+//            return false;
+//        } else if (buscaLista(Cor, "VERDE") == buscaLista(Bebida, "CAFE")) {
+//            return true;
+//        }
+//        if (buscaLista(Comida, "PIZZA") != buscaLista(Animal, "PASSARO")) {
+//            return false;
+//        } else if (buscaLista(Comida, "PIZZA") == buscaLista(Animal, "PASSARO")) {
+//            return true;
+//        }
+//        if (buscaLista(Cor, "BRANCA") - buscaLista(Cor, "VERDE") == 1) {
+//            return true;
+//        } else if (buscaLista(Cor, "BRANCA") - buscaLista(Cor, "VERDE") != 1) {
+//            return false;
+//        }
+//
+//        if (buscaLista(Comida, "FRUTA") != buscaLista(Cor, "AMARELO")) {
+//            return false;
+//        } else if (buscaLista(Comida, "FRUTA") == buscaLista(Cor, "AMARELO")) {
+//            return true;
+//        }
+//
+//        if (Math.abs(buscaLista(Comida, "CARNE") - buscaLista(Animal, "GATO")) == 1) {
+//            return true;
+//        } else if (Math.abs(buscaLista(Comida, "CARNE") - buscaLista(Animal, "GATO")) != 1) {
+//            return false;
+//        }
+//
+//        if (Math.abs(buscaLista(Animal, "CAVALO") - buscaLista(Comida, "FRUTA")) == 1) {
+//            return true;
+//        } else if (Math.abs(buscaLista(Animal, "CAVALO") - buscaLista(Comida, "FRUTA")) != 1) {
+//            return false;
+//        }
+//
+//        if (buscaLista(Comida, "LEGUMES") != buscaLista(Bebida, "CERVEJA")) {
+//            return false;
+//        } else if (buscaLista(Comida, "LEGUMES") == buscaLista(Bebida, "CERVEJA")) {
+//            return true;
+//        }
+//
+//        if (buscaLista(Nacionalidade, "CUBANO") != buscaLista(Comida, "DOCES")) {
+//            return false;
+//        } else if (buscaLista(Nacionalidade, "CUBANO") == buscaLista(Comida, "DOCES")) {
+//            return true;
+//        }
+//
+//        if (Math.abs(buscaLista(Nacionalidade, "PERUANO") - buscaLista(Cor, "AZUL")) == 1) {
+//            return true;
+//        } else if (Math.abs(buscaLista(Nacionalidade, "PERUANO") - buscaLista(Cor, "AZUL")) != 1) {
+//            return false;
+//        }
+//        return true;
     }
 
     // gera todas as permuta��es
