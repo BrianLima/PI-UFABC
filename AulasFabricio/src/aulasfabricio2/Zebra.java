@@ -35,7 +35,10 @@ class Zebra {
     // modela todas as dicas que temos em forma de condi��es/restri��es
     public static boolean Possivel(int num, int cor, int bebida, int comida, int animal) {
         int nacionalidade = adivinhaNacionalidade(num, cor, bebida, comida, animal);
-        if (buscaLista(Nacionalidade, "BRASILEIRO") == nacionalidade && buscaLista(Cor, "VERMELHO") != cor) {
+        if (nacionalidade == 6) {
+            return false;
+        }
+        else if (buscaLista(Nacionalidade, "BRASILEIRO") == nacionalidade && buscaLista(Cor, "VERMELHO") != cor) {
             //Se brasileiro, a casa é vermelha
             return false;
         } else if (buscaLista(Nacionalidade, "ARGENTINO") == nacionalidade && buscaLista(Animal, "CACHORRO") != animal) {
@@ -62,6 +65,9 @@ class Zebra {
         } else if (buscaLista(Casa, "TRES") == num && buscaLista(Bebida, "LEITE") != bebida) {
             //Na casa do meio se bebe leite
             return false;
+        } else if (buscaLista(Nacionalidade, "PERUANO") == nacionalidade && buscaLista(Casa, "UM") != num) {
+            //O peruano mora na primeira casa
+            return false;
         } else if (buscaLista(Comida, "CARNE") == comida) {
             //Se come carne
             if (buscaLista(Animal, "GATOS") != animal + 1 || buscaLista(Animal, "GATOS") != animal - 1) {
@@ -74,7 +80,15 @@ class Zebra {
                 //O vizinho tem um cavalo
                 return false;
             }
-        } else if (buscaLista(Bebida, "AGUA") == bebida) {
+        } else if (buscaLista(Nacionalidade, "CUBANO") == nacionalidade && buscaLista(Comida, "DOCES") != comida) {
+            return false;
+        } 
+        else if (buscaLista(Nacionalidade, "PERUANO") == nacionalidade) {
+            if (buscaLista(Cor, "AZUL") != cor -1 || buscaLista(Cor, "AZUL") != cor +1) {
+                return false;
+            }
+        }
+        else if (buscaLista(Bebida, "AGUA") == bebida) {
             //Se bebe agua
             if (buscaLista(Comida, "CARNE") != comida - 1 || buscaLista(Comida, "CARNE") != comida - 1) {
                 //O vizinho come carne
@@ -130,19 +144,15 @@ class Zebra {
         //Todas as colocações que contradiziam as verdades absolutas do texto dado
         //Assim no final, teriamos apenas as que são verdade e achariamos quem tem a zebra
         int index = 0;
-        ArrayList<Integer> remover = new ArrayList<Integer>();
+        ArrayList< int[]> possiveis = new ArrayList< int[]>();
         for (int[] x : lista) {
-            if (!Possivel(x[0], x[1], x[2], x[3], x[4])) {
-                remover.add(index);
+            if (Possivel(x[0], x[1], x[2], x[3], x[4])) {
+                possiveis.add(x);
             }
             index++;
         }
 
-        for (int i = 0; i < remover.size(); i++) {
-            lista.remove(i);
-        }
-
-        for (int[] x : lista) {
+        for (int[] x : possiveis) {
             Imprime(x[0], x[1], x[2], x[3], x[4]);
         }
     }
