@@ -47,7 +47,12 @@ class Zebra {
         } else if (buscaLista(Comida, "LEGUMES") == comida && buscaLista(Bebida, "CERVEJA") != bebida) {
             //Somente quem come legumes bebe cerveja
             return false;
-        } else if (buscaLista(Cor,"BRANCA") == cor && buscaLista(Cor,"VERDE") != (cor -= 1))
+        } else if (buscaLista(Cor, "VERDE") == cor && buscaLista(Cor, "BRANCA") != (cor -= 1)) {
+            return false;
+        } else if (buscaLista(Casa, "TRES") == num && buscaLista(Bebida, "LEITE") != bebida) {
+            return false;
+        } 
+        //else if (buscaLista(Comida, "CARNE") == comida && (buscaLista(Animal, "GATO") == animal))
 
         //Todos os outros são possíveis
         return true;
