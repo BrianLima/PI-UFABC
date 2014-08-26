@@ -51,8 +51,11 @@ class Zebra {
             return false;
         } else if (buscaLista(Casa, "TRES") == num && buscaLista(Bebida, "LEITE") != bebida) {
             return false;
-        } 
-        //else if (buscaLista(Comida, "CARNE") == comida && (buscaLista(Animal, "GATO") == animal))
+        } else if (buscaLista(Comida, "CARNE") == comida) {
+            if (buscaLista(Animal, "GATOS") == animal+ 1 || buscaLista(Animal, "GATOS") == animal- 1) {
+                return false;
+            }
+        }
 
         //Todos os outros são possíveis
         return true;
