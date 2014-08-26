@@ -175,7 +175,7 @@ class Zebra {
     }
 
     // imprime a tabela
-    public static void Imprime(String[] s, int[] x) {
+    public static void Imprime(int num, int cor, int bebida, int comida, int animal) {
     }
 
     public static void main(String[] args) {
@@ -201,12 +201,14 @@ class Zebra {
             index++;
         }
 
+        String a = Casa[1];
+        
         for (int i = 0; i < remover.size(); i++) {
             lista.remove(i);
         }
 
-        for (int i = 0; i < 10; i++) {
-
+        for (int[] x: lista) {
+            Imprime(x[0], x[1], x[2], x[3], x[4]);
         }
     }
 }
