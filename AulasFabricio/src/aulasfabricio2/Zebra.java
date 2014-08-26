@@ -35,7 +35,16 @@ class Zebra {
     // modela todas as dicas que temos em forma de condi��es/restri��es
     public static boolean Possivel(int num, int cor, int bebida, int comida, int animal) {
         int nacionalidade = adivinhaNacionalidade(num, cor, bebida, comida, animal);
-        if (buscaLista(Cor, "VERDE") == cor && buscaLista(Bebida, "CAFE") != bebida) {
+        if (buscaLista(Nacionalidade, "BRASILEIRO") == nacionalidade && buscaLista(Cor, "VERMELHO") != cor) {
+            //Se brasileiro, a casa é vermelha
+            return false;
+        } else if (buscaLista(Nacionalidade, "ARGENTINO") == nacionalidade && buscaLista(Animal, "CACHORRO") != animal) {
+            //Se argentino, tem cachorro
+            return false;
+        } else if (buscaLista(Nacionalidade, "CHILENO") == nacionalidade && buscaLista(Nacionalidade, "CHA") == bebida) {
+            //Se chileno bebe chá
+            return false;
+        } else if (buscaLista(Cor, "VERDE") == cor && buscaLista(Bebida, "CAFE") != bebida) {
             //Somente o morador da casa verde toma café
             return false;
         } else if (buscaLista(Comida, "PIZZA") == comida && buscaLista(Animal, "PASSARO") != animal) {
