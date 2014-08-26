@@ -34,10 +34,21 @@ class Zebra {
 
     // modela todas as dicas que temos em forma de condi��es/restri��es
     public static boolean Possivel(int num, int cor, int bebida, int comida, int animal) {
-        //Somente o morador da casa verde toma café
-        if (buscaLista(Cor,"VERDE") == cor && buscaLista(Bebida, "CAFE") != bebida) {
+
+        if (buscaLista(Cor, "VERDE") == cor && buscaLista(Bebida, "CAFE") != bebida) {
+            //Somente o morador da casa verde toma café
+            return false;
+        } else if (buscaLista(Comida, "PIZZA") == comida && buscaLista(Animal, "PASSARO") != animal) {
+            //Somente o comedor de pizza tem um pássaro
+            return false;
+        } else if (buscaLista(Cor, "AMARELA") == cor && buscaLista(Comida, "FRUTAS") != comida) {
+            //Somente o dono da casa amarela come frutas
+            return false;
+        } else if(buscaLista(Comida, "LEGUMES") == comida && buscaLista(Bebida, "CERVEJA") != bebida){
+            //Somente quem come legumes bebe cerveja
             return false;
         }
+
         //Todos os outros são possíveis
         return true;
 //        if (buscaLista(Nacionalidade, "PERUANO") != buscaLista(Casa, "UM")) // se a Nacionalidade eh Peruana e a casa nao eh a primeira, entao quebrou a premissa
@@ -158,15 +169,19 @@ class Zebra {
         //Todas as colocações que contradiziam as verdades absolutas do texto dado
         //Assim no final, teriamos apenas as que são verdade e achariamos quem tem a zebra
         int index = 0;
-        ArrayList<Integer>remover = new ArrayList<Integer>();
+        ArrayList<Integer> remover = new ArrayList<Integer>();
         for (int[] x : lista) {
             if (!Possivel(x[0], x[1], x[2], x[3], x[4])) {
                 remover.add(index);
             }
             index++;
         }
-        
+
         for (int i = 0; i < remover.size(); i++) {
+            lista.remove(i);
+        }
+        
+        for (int i = 0; i < 10; i++) {
             
         }
     }
