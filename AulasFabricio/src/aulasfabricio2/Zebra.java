@@ -44,10 +44,10 @@ class Zebra {
         } else if (buscaLista(Cor, "AMARELA") == cor && buscaLista(Comida, "FRUTAS") != comida) {
             //Somente o dono da casa amarela come frutas
             return false;
-        } else if(buscaLista(Comida, "LEGUMES") == comida && buscaLista(Bebida, "CERVEJA") != bebida){
+        } else if (buscaLista(Comida, "LEGUMES") == comida && buscaLista(Bebida, "CERVEJA") != bebida) {
             //Somente quem come legumes bebe cerveja
             return false;
-        }
+        } else if (buscaLista(Cor,"BRANCA") == cor && buscaLista(Cor,"VERDE") != (cor -= 1))
 
         //Todos os outros são possíveis
         return true;
@@ -180,9 +180,9 @@ class Zebra {
         for (int i = 0; i < remover.size(); i++) {
             lista.remove(i);
         }
-        
+
         for (int i = 0; i < 10; i++) {
-            
+
         }
     }
 }
