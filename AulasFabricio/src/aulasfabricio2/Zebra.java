@@ -48,11 +48,27 @@ class Zebra {
             //Somente quem come legumes bebe cerveja
             return false;
         } else if (buscaLista(Cor, "VERDE") == cor && buscaLista(Cor, "BRANCA") != (cor -= 1)) {
+            //A casa verde fica a esquerda da casa branca
             return false;
         } else if (buscaLista(Casa, "TRES") == num && buscaLista(Bebida, "LEITE") != bebida) {
+            //Na casa do meio se bebe leite
             return false;
         } else if (buscaLista(Comida, "CARNE") == comida) {
-            if (buscaLista(Animal, "GATOS") == animal+ 1 || buscaLista(Animal, "GATOS") == animal- 1) {
+            //Se come carne
+            if (buscaLista(Animal, "GATOS") != animal+ 1 || buscaLista(Animal, "GATOS") != animal- 1) {
+                //O vizinho tem um gato
+                return false;
+            }
+        } else if(buscaLista(Comida, "Frutas") == comida){
+            //Se come frutas
+            if (buscaLista(Animal, "CAVALO") != animal - 1 || buscaLista(Animal, "CAVALO") != animal + 1) {
+                //O vizinho tem um cavalo
+                return false;
+            }
+        } else if (buscaLista(Bebida, "AGUA") == bebida) {
+            //Se bebe agua
+            if (buscaLista(Comida, "CARNE") != comida - 1 || buscaLista(Comida, "CARNE") != comida - 1) {
+                //O vizinho come carne
                 return false;
             }
         }
