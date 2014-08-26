@@ -34,7 +34,7 @@ class Zebra {
 
     // modela todas as dicas que temos em forma de condi��es/restri��es
     public static boolean Possivel(int num, int cor, int bebida, int comida, int animal) {
-
+        int nacionalidade = adivinhaNacionalidade(num, cor, bebida, comida, animal);
         if (buscaLista(Cor, "VERDE") == cor && buscaLista(Bebida, "CAFE") != bebida) {
             //Somente o morador da casa verde toma café
             return false;
@@ -137,12 +137,21 @@ class Zebra {
             Imprime(x[0], x[1], x[2], x[3], x[4]);
         }
     }
-    static int adivinhaNacionalidade(int num, int cor, int bebida, int comida, int animal){
-        int nacionalidade = 0;
+
+    static int adivinhaNacionalidade(int num, int cor, int bebida, int comida, int animal) {
+        int nacionalidade = 6;
         if (cor == buscaLista(Cor, "VERMELHO")) {
-            nacionalidade = buscaLista(Cor, "VERMELHO");
+            nacionalidade = buscaLista(Nacionalidade, "BRASILEIRO");
+        } else if (bebida == buscaLista(Bebida, "CHA")) {
+            nacionalidade = buscaLista(Nacionalidade, "CHILENO");
+        } else if (animal == buscaLista(Animal, "CACHORRO")) {
+            nacionalidade = buscaLista(Nacionalidade, "ARGENTINO");
+        } else if (num == buscaLista(Casa, "UM") && cor - 1 == buscaLista(Cor, "AZUL")) {
+            nacionalidade = buscaLista(Nacionalidade, "PERUANO");
+        } else if (comida == buscaLista(Comida, "DOCES")) {
+            nacionalidade = buscaLista(Nacionalidade, "CUBANO");
         }
-        
+
         return nacionalidade;
     }
 }
