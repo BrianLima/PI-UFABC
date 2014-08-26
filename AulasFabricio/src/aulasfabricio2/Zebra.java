@@ -55,11 +55,11 @@ class Zebra {
             return false;
         } else if (buscaLista(Comida, "CARNE") == comida) {
             //Se come carne
-            if (buscaLista(Animal, "GATOS") != animal+ 1 || buscaLista(Animal, "GATOS") != animal- 1) {
+            if (buscaLista(Animal, "GATOS") != animal + 1 || buscaLista(Animal, "GATOS") != animal - 1) {
                 //O vizinho tem um gato
                 return false;
             }
-        } else if(buscaLista(Comida, "Frutas") == comida){
+        } else if (buscaLista(Comida, "Frutas") == comida) {
             //Se come frutas
             if (buscaLista(Animal, "CAVALO") != animal - 1 || buscaLista(Animal, "CAVALO") != animal + 1) {
                 //O vizinho tem um cavalo
@@ -75,79 +75,6 @@ class Zebra {
 
         //Todos os outros são possíveis
         return true;
-//        if (buscaLista(Nacionalidade, "PERUANO") != buscaLista(Casa, "UM")) // se a Nacionalidade eh Peruana e a casa nao eh a primeira, entao quebrou a premissa
-//        {
-//            return false;
-//        } else if (buscaLista(Nacionalidade, "PERUANO") == buscaLista(Casa, "UM")) {
-//            return true;
-//        }
-//        if (buscaLista(Nacionalidade, "BRASILEIRO") != buscaLista(Cor, "VERMELHO")) {
-//            return false;
-//        } else if (buscaLista(Nacionalidade, "BRASILEIRO") == buscaLista(Cor, "VERMELHO")) {
-//            return true;
-//        }
-//        if (buscaLista(Nacionalidade, "ARGENTINO") != buscaLista(Animal, "CACHORRO")) {
-//            return false;
-//        } else if (buscaLista(Nacionalidade, "ARGENTINO") == buscaLista(Animal, "CACHORRO")) {
-//            return true;
-//        }
-//        if (buscaLista(Nacionalidade, "CHILENO") != buscaLista(Bebida, "CHA")) {
-//            return false;
-//        } else if (buscaLista(Nacionalidade, "CHILENO") == buscaLista(Bebida, "CHA")) {
-//            return true;
-//        }
-//        if (buscaLista(Cor, "VERDE") != buscaLista(Bebida, "CAFE")) {
-//            return false;
-//        } else if (buscaLista(Cor, "VERDE") == buscaLista(Bebida, "CAFE")) {
-//            return true;
-//        }
-//        if (buscaLista(Comida, "PIZZA") != buscaLista(Animal, "PASSARO")) {
-//            return false;
-//        } else if (buscaLista(Comida, "PIZZA") == buscaLista(Animal, "PASSARO")) {
-//            return true;
-//        }
-//        if (buscaLista(Cor, "BRANCA") - buscaLista(Cor, "VERDE") == 1) {
-//            return true;
-//        } else if (buscaLista(Cor, "BRANCA") - buscaLista(Cor, "VERDE") != 1) {
-//            return false;
-//        }
-//
-//        if (buscaLista(Comida, "FRUTA") != buscaLista(Cor, "AMARELO")) {
-//            return false;
-//        } else if (buscaLista(Comida, "FRUTA") == buscaLista(Cor, "AMARELO")) {
-//            return true;
-//        }
-//
-//        if (Math.abs(buscaLista(Comida, "CARNE") - buscaLista(Animal, "GATO")) == 1) {
-//            return true;
-//        } else if (Math.abs(buscaLista(Comida, "CARNE") - buscaLista(Animal, "GATO")) != 1) {
-//            return false;
-//        }
-//
-//        if (Math.abs(buscaLista(Animal, "CAVALO") - buscaLista(Comida, "FRUTA")) == 1) {
-//            return true;
-//        } else if (Math.abs(buscaLista(Animal, "CAVALO") - buscaLista(Comida, "FRUTA")) != 1) {
-//            return false;
-//        }
-//
-//        if (buscaLista(Comida, "LEGUMES") != buscaLista(Bebida, "CERVEJA")) {
-//            return false;
-//        } else if (buscaLista(Comida, "LEGUMES") == buscaLista(Bebida, "CERVEJA")) {
-//            return true;
-//        }
-//
-//        if (buscaLista(Nacionalidade, "CUBANO") != buscaLista(Comida, "DOCES")) {
-//            return false;
-//        } else if (buscaLista(Nacionalidade, "CUBANO") == buscaLista(Comida, "DOCES")) {
-//            return true;
-//        }
-//
-//        if (Math.abs(buscaLista(Nacionalidade, "PERUANO") - buscaLista(Cor, "AZUL")) == 1) {
-//            return true;
-//        } else if (Math.abs(buscaLista(Nacionalidade, "PERUANO") - buscaLista(Cor, "AZUL")) != 1) {
-//            return false;
-//        }
-//        return true;
     }
 
     // gera todas as permuta��es
@@ -176,6 +103,7 @@ class Zebra {
 
     // imprime a tabela
     public static void Imprime(int num, int cor, int bebida, int comida, int animal) {
+        System.out.println("O dono da casa número " + Casa[num] + " de cor " + Cor[cor] + " tem o animal " + Animal[animal] + " e come " + Comida[comida] + " e bebe " + Bebida[bebida] + ".");
     }
 
     public static void main(String[] args) {
@@ -201,14 +129,20 @@ class Zebra {
             index++;
         }
 
-        String a = Casa[1];
-        
         for (int i = 0; i < remover.size(); i++) {
             lista.remove(i);
         }
 
-        for (int[] x: lista) {
+        for (int[] x : lista) {
             Imprime(x[0], x[1], x[2], x[3], x[4]);
         }
+    }
+    static int adivinhaNacionalidade(int num, int cor, int bebida, int comida, int animal){
+        int nacionalidade = 0;
+        if (cor == buscaLista(Cor, "VERMELHO")) {
+            nacionalidade = buscaLista(Cor, "VERMELHO");
+        }
+        
+        return nacionalidade;
     }
 }
